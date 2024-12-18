@@ -2,10 +2,10 @@
 using WeatherForecast.Services;
 using WeatherForecast.Models;
 
-Dictionary<string, int> stations = new Dictionary<string, int>
+Dictionary<string, string> stations = new Dictionary<string, string>
 {
-    ["reykjavík"] = 1,
-    ["akureyri"] = 3471
+    ["reykjavík"] = "1",
+    ["akureyri"] = "3471"
 };
 
 var forecastService = new ForecastService();
