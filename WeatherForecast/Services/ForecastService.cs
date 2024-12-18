@@ -39,7 +39,7 @@ namespace WeatherForecast.Services
         };
 
 
-        public async Task<Forecast> GetForecastForStation(int stationId)
+        public async Task<Forecast> GetForecastForStation(string stationId)
         {
             var response = await GetForecast(stationId);
             var xmlDoc = new XmlDocument();
@@ -72,7 +72,7 @@ namespace WeatherForecast.Services
             }
             return forecast;
         }
-        private async Task<HttpResponseMessage> GetForecast(int stationId)
+        private async Task<HttpResponseMessage> GetForecast(string stationId)
         {
             return await _client.GetAsync($"?op_w=xml&type=forec&lang=is&view=xml&ids={stationId}");
         }
